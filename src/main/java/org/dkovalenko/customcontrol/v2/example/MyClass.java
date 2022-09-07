@@ -2,9 +2,9 @@ package org.dkovalenko.customcontrol.v2.example;
 
 public class MyClass {
 
-    private String name;
+    private final String name;
 
-    private Integer years;
+    private final Integer years;
 
     public MyClass(String name, Integer years) {
         this.name = name;

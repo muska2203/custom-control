@@ -8,7 +8,7 @@ public enum MyControlLevels implements ControlLevel {
     ERROR(1)
     ;
 
-    private Integer code;
+    private final Integer code;
 
     MyControlLevels(Integer code) {
         this.code = code;
