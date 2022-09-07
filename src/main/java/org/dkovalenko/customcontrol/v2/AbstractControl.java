@@ -1,5 +1,8 @@
 package org.dkovalenko.customcontrol.v2;
 
+/**
+ * Дефолтная реализация контроля
+ */
 public abstract class AbstractControl<T, K extends ControlLevel> implements Control<T, K> {
 
     private ControlMessageFiller controlMessageFiller;

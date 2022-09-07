@@ -1,6 +1,8 @@
 package org.dkovalenko.customcontrol.v2;
 
-
+/**
+ * Результат выполнения контроля. Возможно стоит объединить с {@link ValidationError}
+ */
 public interface ControlResult<T extends ControlLevel> {
 
     boolean isValid();

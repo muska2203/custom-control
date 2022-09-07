@@ -3,6 +3,10 @@ package org.dkovalenko.customcontrol.v2;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Глобальный валидатор, который может валидировать любой объект. Для определения подходящих контролей использует {@link ControlManager}
+ * @param <K> Реализация уровня контролей.
+ */
 public class ControlValidator<K extends ControlLevel> {
 
     private final ControlManager<K> controlManager;

@@ -3,6 +3,10 @@ package org.dkovalenko.customcontrol.v2;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * Данный контексто будет применятся в нескольких контролях, возможно пвыполняющихся параллельно,
+ * так что все операции должны поддерживать использование в многопоточном коде.
+ */
 public class ValidationContext {
 
     Map<String, Object> context = new ConcurrentHashMap<>();

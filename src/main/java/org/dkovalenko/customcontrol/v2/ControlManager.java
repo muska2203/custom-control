@@ -6,7 +6,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-
+/**
+ * Объект данного класса ведет учет контролей, которые были к нему подключены.
+ * Также может найти нужные контроли по типу обрабатываемого объекта
+ */
 public class ControlManager<K extends ControlLevel> {
 
     Map<Class<?>, List<Control<?, K>>> controlMap = new HashMap<>();
