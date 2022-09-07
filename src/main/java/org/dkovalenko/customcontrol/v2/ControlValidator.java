@@ -16,7 +16,8 @@ public class ControlValidator<K extends ControlLevel> {
         Iterable<Control<T, K>> controls = controlManager.getControlsFor((Class<T>) entity.getClass());
         List<ValidationError<K>> validationErrors = new ArrayList<>();
         for (Control<T, K> control : controls) {
-            ControlResult<K> controlResult = control.validate(entity, validationContext);
+            LocalValidationContext localValidationContext = new LocalValidationContext(validationContext);
+            ControlResult<K> controlResult = control.validate(entity, localValidationContext);
             if (!controlResult.isValid()) {
                 validationErrors.add(new ValidationError<>(controlResult.getControlType(), controlResult.getMessage()));
             }

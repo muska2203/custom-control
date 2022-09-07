@@ -1,10 +1,11 @@
 package org.dkovalenko.customcontrol.v2;
 
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class ValidationContext {
 
-    Map<String, Object> context;
+    Map<String, Object> context = new ConcurrentHashMap<>();
 
     @SuppressWarnings("unchecked")
     <T> T getValue(String code) {

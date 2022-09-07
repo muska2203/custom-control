@@ -5,7 +5,7 @@ public abstract class AbstractControl<T, K extends ControlLevel> implements Cont
     private ControlMessageFiller controlMessageFiller;
 
     @Override
-    public ControlResult<K> validate(T entity, ValidationContext validationContext) {
+    public ControlResult<K> validate(T entity, LocalValidationContext validationContext) {
         ControlType<K> controlType = getType();
         if (!isApplicable(entity, validationContext) || isValid(entity, validationContext)) {
             return ControlResult.valid(controlType);
@@ -15,13 +15,13 @@ public abstract class AbstractControl<T, K extends ControlLevel> implements Cont
         return ControlResult.invalid(controlType, message);
     }
 
-    protected abstract boolean isValid(T entity, ValidationContext validationContext);
+    protected abstract boolean isValid(T entity, LocalValidationContext validationContext);
 
-    protected String[] getMessageArgs(T entity, ValidationContext validationContext) {
+    protected String[] getMessageArgs(T entity, LocalValidationContext validationContext) {
         return new String[] {};
     }
 
-    protected abstract boolean isApplicable(T entity, ValidationContext validationContext);
+    protected abstract boolean isApplicable(T entity, LocalValidationContext validationContext);
 
     public void setControlMessageFiller(ControlMessageFiller filler) {
         this.controlMessageFiller = filler;
